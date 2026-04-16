@@ -1,0 +1,12 @@
+# Allow all requests
+Require all granted
+Satisfy Any
+
+# Set default index
+DirectoryIndex index.html index.php
+
+# Disable mod_security (sometimes causes 403)
+<IfModule mod_security.c>
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>

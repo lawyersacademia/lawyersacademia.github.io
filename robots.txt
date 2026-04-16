@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lawyersacademia.great-site.net/sitemap.xml

@@ -1,0 +1,170 @@
+<?php
+// ============================================
+// GEMINI API PROXY - FIXED FOR INFINITYFREE
+// Added User-Agent, fallback methods, better error handling
+// ============================================
+
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
+
+// Handle preflight
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// ⚠️ HIDDEN API KEY
+define('GEMINI_API_KEY', 'AIzaSyC1UceRx12YvNu28dM9t3_bHBZXeyVFsFw');
+define('GEMINI_API_URL', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent');
+
+// Security: Only POST requests
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Method not allowed']);
+    exit();
+}
+
+// Get request body
+$input = file_get_contents('php://input');
+$data = json_decode($input, true);
+
+if (!$data || !isset($data['prompt'])) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid request']);
+    exit();
+}
+
+$userPrompt = $data['prompt'];
+$conversationHistory = isset($data['history']) ? $data['history'] : [];
+
+// ── BUILD SYSTEM PROMPT ──
+$systemPrompt = "You are an expert Pakistani law assistant and LLB professor. Your role is to:
+
+1. Answer questions about Pakistani law with absolute accuracy
+2. Reference Acts: Contract Act 1872, Code of Civil Procedure (CPC), Criminal Procedure Code (CrPC), Pakistan Penal Code (PPC), Constitution 1973, etc.
+3. Explain legal concepts, court procedures, and case law
+4. Provide citations in format: 'Section X of [Act Name]'
+5. Include a disclaimer: '⚠️ Verify from official textbooks and courts'
+
+For each answer:
+- Start with the relevant section number in bold
+- Explain the concept in simple Urdu-English mix if needed
+- Provide real examples from Pakistani law
+- Always end with 'Verify from: [official source]'
+
+Keep answers detailed but accessible. Use bullet points for procedures.";
+
+// ── BUILD CONVERSATION TEXT ──
+$fullPrompt = $systemPrompt . "\n\n---\n\n";
+
+foreach ($conversationHistory as $msg) {
+    if ($msg['role'] === 'user') {
+        $fullPrompt .= "User: " . $msg['content'] . "\n\n";
+    } else {
+        $fullPrompt .= "Assistant: " . $msg['content'] . "\n\n";
+    }
+}
+
+$fullPrompt .= "User: " . $userPrompt . "\n\nAssistant: ";
+
+$requestBody = json_encode([
+    'contents' => [
+        ['parts' => [['text' => $fullPrompt]]]
+    ]
+]);
+
+// ── FUNCTION TO CALL API WITH CURL ──
+function callWithCurl($url, $body) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        'User-Agent: Mozilla/5.0 (compatible; LawyersAcademia/1.0; +https://lawyersacademia.great-site.net)'
+    ]);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curlError = curl_error($ch);
+    curl_close($ch);
+    
+    if ($curlError) {
+        return ['error' => $curlError, 'httpCode' => 0];
+    }
+    return ['response' => $response, 'httpCode' => $httpCode];
+}
+
+// ── FUNCTION TO CALL API WITH FILE_GET_CONTENTS (fallback) ──
+function callWithFileGetContents($url, $body) {
+    $options = [
+        'http' => [
+            'header' => "Content-Type: application/json\r\n" .
+                        "User-Agent: Mozilla/5.0 (compatible; LawyersAcademia/1.0)\r\n",
+            'method' => 'POST',
+            'content' => $body,
+            'timeout' => 30,
+            'ignore_errors' => true
+        ],
+        'ssl' => ['verify_peer' => false, 'verify_peer_name' => false]
+    ];
+    $context = stream_context_create($options);
+    $response = @file_get_contents($url, false, $context);
+    $httpCode = 0;
+    if (isset($http_response_header[0])) {
+        preg_match('/\d{3}/', $http_response_header[0], $matches);
+        $httpCode = $matches[0] ?? 0;
+    }
+    if ($response === false) {
+        return ['error' => 'file_get_contents failed', 'httpCode' => $httpCode];
+    }
+    return ['response' => $response, 'httpCode' => $httpCode];
+}
+
+// ── TRY CURL FIRST, THEN FALLBACK ──
+$curlUrl = GEMINI_API_URL . '?key=' . GEMINI_API_KEY;
+$result = callWithCurl($curlUrl, $requestBody);
+
+// If cURL fails (error or HTTP 403/0), try fallback
+if (isset($result['error']) || $result['httpCode'] === 0 || $result['httpCode'] === 403) {
+    error_log("CURL failed, trying fallback. Error: " . ($result['error'] ?? 'HTTP ' . $result['httpCode']));
+    $result = callWithFileGetContents($curlUrl, $requestBody);
+}
+
+// Check final result
+if (isset($result['error'])) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'error' => 'Unable to reach Gemini API. Your hosting (InfinityFree) may block outgoing requests. Please contact support or use a different hosting provider.'
+    ]);
+    exit();
+}
+
+$responseData = json_decode($result['response'], true);
+$httpCode = $result['httpCode'];
+
+if ($httpCode !== 200) {
+    $errorMsg = $responseData['error']['message'] ?? 'API Error: HTTP ' . $httpCode;
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'error' => $errorMsg
+    ]);
+    exit();
+}
+
+$reply = $responseData['candidates'][0]['content']['parts'][0]['text'] ?? 'No response received.';
+
+http_response_code(200);
+echo json_encode([
+    'success' => true,
+    'reply' => $reply
+]);
+?>
