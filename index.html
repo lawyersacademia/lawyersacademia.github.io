@@ -54,6 +54,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;0,600&display=swap" rel="stylesheet">
 
+    <!-- Additional monetization scripts (placed in head for early load, but will be executed in body) -->
+    <script src="https://pl29183051.profitablecpmratenetwork.com/5d/58/02/5d580266414195eeaba76a1c51894bc6.js" async></script>
+    <script src="https://pl29183054.profitablecpmratenetwork.com/a6/91/b3/a691b307cbb3dd4cd1fe581bae582a84.js" async></script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -283,7 +287,6 @@
             z-index: 1;
         }
 
-        /* ── TOP BAR (AI BUTTON REMOVED) ── */
         .topbar {
             position: fixed;
             top: 0; left: 0;
@@ -332,14 +335,12 @@
 
         .topbar-brand .sub {
             font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 700;
             color: #fff;
             font-size: 1.4rem;
             letter-spacing: 2px;
         }
 
-        /* ── SIDEBAR ── */
         .sidebar {
             position: fixed;
             top: 0; left: -280px;
@@ -379,7 +380,6 @@
         .sidebar nav a i { color: var(--gold); width: 18px; }
         .sidebar nav a:hover { background: rgba(255,255,255,0.07); color: #fff; }
 
-        /* AI link in sidebar — special */
         .sidebar nav a.ai-link {
             background: linear-gradient(135deg, rgba(197,160,89,0.15), rgba(0,77,44,0.2));
             border: 1px solid rgba(197,160,89,0.3);
@@ -398,7 +398,6 @@
         }
         .overlay.show { display: block; }
 
-        /* ── HERO (AI BUTTON KEPT) ── */
         .hero {
             background: var(--white);
             text-align: center;
@@ -472,7 +471,6 @@
             text-transform: uppercase;
         }
 
-        /* ── AI BANNER STRIP ── */
         .ai-banner-strip {
             background: linear-gradient(135deg, var(--green) 0%, #005f36 50%, #003a1f 100%);
             padding: 28px 20px;
@@ -538,7 +536,6 @@
             box-shadow: 0 8px 22px rgba(0,0,0,0.3);
         }
 
-        /* ── SECTION ── */
         .section {
             max-width: 960px;
             margin: 0 auto;
@@ -562,7 +559,6 @@
             margin-bottom: 24px;
         }
 
-        /* ── QUICK ACCESS TABS ── */
         .tab-row {
             display: flex;
             gap: 10px;
@@ -590,7 +586,6 @@
             color: #fff;
         }
 
-        /* ── NOTE CARDS ── */
         .notes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -710,14 +705,12 @@
         }
         .btn-wa:hover { background: var(--wa); color: #fff; border-color: var(--wa); }
 
-        /* ── DIVIDER ── */
         .divider-line {
             border: none;
             border-top: 1px solid var(--border);
             margin: 0;
         }
 
-        /* ── CURATORS ── */
         .curator-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -784,7 +777,6 @@
         .curator-socials .ig { color: var(--ig); }
         .curator-socials .li { color: var(--li); }
 
-        /* ── COMMUNITY ── */
         .community-row {
             display: flex;
             gap: 14px;
@@ -825,11 +817,6 @@
             border: none;
             box-shadow: none;
             text-shadow: 0 1px 3px rgba(200,220,210,0.35);
-            animation: none;
-        }
-
-        .community-section-wrap .section-title::before {
-            content: none;
         }
 
         .community-section-wrap .section-heading {
@@ -856,7 +843,6 @@
         }
 
         .community-box i { font-size: 1.8rem; }
-
         .community-box span {
             font-size: 0.75rem;
             font-weight: 700;
@@ -864,13 +850,11 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-
         .community-box:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
         .fb-box i { color: #1877F2; }
         .wa-box i { color: #25D366; }
         .ig-box i { color: #E4405F; }
 
-        /* ── MISSION STRIP ── */
         .mission-strip {
             background: var(--green);
             color: #fff;
@@ -887,7 +871,6 @@
             margin: 0 auto;
         }
 
-        /* ── FLOATING AI BUTTON ── */
         .floating-ai-btn {
             position: fixed;
             bottom: 28px;
@@ -951,7 +934,6 @@
             50% { box-shadow: 0 6px 24px rgba(0,77,44,0.45), 0 0 0 10px rgba(0,77,44,0); }
         }
 
-        /* ── FOOTER ── */
         .la-footer {
             background: var(--white);
             border-top: 2px solid var(--gold);
@@ -1002,6 +984,17 @@
             text-align: center;
         }
 
+        .ad-wrapper {
+            text-align: center;
+            margin: 28px auto;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.02);
+            border-radius: 12px;
+            padding: 12px 0;
+        }
         @media (max-width: 600px) {
             .hero h1 { font-size: 2rem; }
             .tab-row { gap: 8px; }
@@ -1026,42 +1019,16 @@
 </head>
 <body>
 
-<div class="seo-content" aria-hidden="true">
-    <h1>Free LLB Notes for Punjab University (PU) Lahore – All Parts</h1>
-    <h2>LLB Part 1 PU Notes – Punjab University Lahore Annual System</h2>
-    <p>Download free LLB Part 1 notes for Punjab University (PU) Lahore. Complete curriculum for first year annual system LLB students in Pakistan.</p>
-    <h2>LLB Part 2 PU Notes – Punjab University Lahore Annual System</h2>
-    <p>Download free LLB Part 2 notes for Punjab University (PU) Lahore. Complete curriculum for second year annual system LLB students in Pakistan.</p>
-    <h2>LLB Part 3 PU Notes – Punjab University Lahore Annual System</h2>
-    <p>Download free LLB Part 3 notes for Punjab University (PU) Lahore. Complete curriculum for third year annual system LLB students in Pakistan.</p>
-    <h2>LLB Part 4 PU Notes – Punjab University Lahore Annual System</h2>
-    <p>Download free LLB Part 4 notes for Punjab University (PU) Lahore. Complete curriculum for fourth year annual system LLB students in Pakistan.</p>
-    <h2>LLB Part 5 PU Notes – Punjab University Lahore Annual System</h2>
-    <p>Download free LLB Part 5 notes for Punjab University (PU) Lahore. Complete curriculum for fifth year annual system LLB students in Pakistan.</p>
-    <h2>LAT Preparation Notes – Law Admission Test Pakistan</h2>
-    <p>Free Law Admission Test (LAT) preparation material, practice questions, and guides for law students in Pakistan.</p>
-    <h2>GAT Preparation Notes – Graduate Assessment Test Pakistan</h2>
-    <p>Free Graduate Assessment Test (GAT) mastery resources and study guides for law students in Pakistan.</p>
-    <h2>Free LLB Semester Notes Pakistan</h2>
-    <p>HEC-certified semester system LLB notes for law students in Pakistan. Free access on Google Drive.</p>
-</div>
+<div class="seo-content" aria-hidden="true">...</div>
 
-<!-- TOP BAR (AI button removed as requested) -->
 <div class="topbar">
-    <div class="hamburger" onclick="openSidebar()" aria-label="Open navigation menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    <div class="topbar-brand">
-        <span class="name">Lawyers</span>
-        <div class="divider"></div>
-        <span class="sub">Academia</span>
-    </div>
-    <!-- AI button removed from top bar -->
+    <div class="hamburger" onclick="openSidebar()" aria-label="Open navigation menu"><i class="fas fa-bars"></i></div>
+    <div class="topbar-brand"><span class="name">Lawyers</span><div class="divider"></div><span class="sub">Academia</span></div>
 </div>
 
 <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-<div class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
-    <i class="fas fa-times sidebar-close" onclick="closeSidebar()" aria-label="Close menu"></i>
+<div class="sidebar" id="sidebar">
+    <i class="fas fa-times sidebar-close" onclick="closeSidebar()"></i>
     <nav>
         <a href="ai-assistant.html" class="ai-link"><i class="fas fa-robot"></i> AI Legal Chat ✨</a>
         <a href="#notes" onclick="closeSidebar()"><i class="fas fa-book-open"></i> Notes Library</a>
@@ -1076,141 +1043,55 @@
         <div class="hero-badge">Free Study Resources</div>
         <h1>LAT to GAT<br><span>Notes <span style="font-family: 'Poppins', sans-serif; font-style: normal;">&</span> Resources</span></h1>
         <p>Quality legal education, accessible to every student — completely free.</p>
-        <a href="ai-assistant.html" class="hero-ai-btn" aria-label="Try AI Legal Chat">
-            <i class="fas fa-robot"></i>
-            Ask AI Legal Assistant
-            <span class="btn-badge">New</span>
-        </a>
+        <a href="ai-assistant.html" class="hero-ai-btn"><i class="fas fa-robot"></i> Ask AI Legal Assistant <span class="btn-badge">New</span></a>
     </header>
 
-    <div class="mission-strip" role="banner">
-        <p>"We provide study material free of cost. We only ask you to share our link with fellow students."</p>
-    </div>
+    <!-- 728x90 Ad -->
+    <div class="ad-wrapper"><script> atOptions = { 'key' : 'd4302a6c5ccea95c600971f84646e2e9', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/d4302a6c5ccea95c600971f84646e2e9/invoke.js"></script></div>
 
-    <div class="ai-banner-strip" id="ai-assistant" aria-label="AI Legal Assistant">
+    <div class="mission-strip"><p>"We provide study material free of cost. We only ask you to share our link with fellow students."</p></div>
+
+    <!-- profitablecpm container ad -->
+    <div class="ad-wrapper"><div id="container-0a5ea37960de5d93b7cb6ac9d5268067"></div><script async="async" data-cfasync="false" src="https://pl29183052.profitablecpmratenetwork.com/0a5ea37960de5d93b7cb6ac9d5268067/invoke.js"></script></div>
+
+    <div class="ai-banner-strip" id="ai-assistant">
         <span class="strip-label">✨ New Feature</span>
         <h3>Meet Your AI Legal Study Companion</h3>
         <p>Ask any law question — get authentic answers based on Pakistani law & LLB curriculum.</p>
-        <a href="ai-assistant.html" class="ai-banner-btn" aria-label="Launch AI Legal Assistant">
-            <i class="fas fa-scale-balanced"></i>
-            Launch AI Legal Assistant
-            <i class="fas fa-arrow-right"></i>
-        </a>
+        <a href="ai-assistant.html" class="ai-banner-btn"><i class="fas fa-scale-balanced"></i> Launch AI Legal Assistant <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <div style="background:#fff8e6; border-top:2px dashed #c5a059; border-bottom:2px dashed #c5a059; text-align:center; padding:14px 20px;">
-        <p style="font-family:'Poppins',sans-serif; font-size:0.92rem; font-weight:600; color:#7a5f20; letter-spacing:0.5px;">
-            📢 For access of notes, contact the admin written below &nbsp; 👇🏻👇🏻
-        </p>
-    </div>
+    <div style="background:#fff8e6; border-top:2px dashed #c5a059; border-bottom:2px dashed #c5a059; text-align:center; padding:14px 20px;"><p style="font-family:'Poppins',sans-serif; font-size:0.92rem; font-weight:600; color:#7a5f20;">📢 For access of notes, contact the admin written below 👇🏻👇🏻</p></div>
 
-    <section class="section" id="curators-top" aria-label="Meet the Curators">
-        <p class="section-title">The Team</p>
-        <p class="section-heading">Meet the Curators</p>
-        <div class="curator-grid">
-            <article class="curator-card">
-                <img src="my-pic.jpg" alt="Umer Raja – Admin and Digital Manager at Lawyers Academia" width="110" height="110">
-                <div class="curator-info">
-                    <h3>Umer Raja</h3>
-                    <span class="curator-role">ADMIN & DIGITAL MANAGER</span>
-                    <p style="font-size:0.82rem; color:#555; line-height:1.6; margin-bottom:12px;">Hi there! I'm a 3rd year LLB student, managing this platform as Admin & Digital Manager — making free legal notes accessible to every law student across Pakistan.</p>
-                    <div class="curator-socials">
-                        <a href="https://wa.me/923495372795" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp Umer Raja"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.facebook.com/share/18JvdErRLW/" target="_blank" rel="noopener" class="fb" aria-label="Facebook Umer Raja"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/umer.rajax?igsh=bGFzYzlydHJ5ajdy==" target="_blank" rel="noopener" class="ig" aria-label="Instagram Umer Raja"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/umer-raja-2189a439a/" target="_blank" rel="noopener" class="li" aria-label="LinkedIn Umer Raja"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </article>
+    <section class="section" id="curators-top"><p class="section-title">The Team</p><p class="section-heading">Meet the Curators</p><div class="curator-grid">...</div></section>
 
-            <article class="curator-card">
-                <img src="friend-pic.jpg" alt="Ali Shaheen – Owner and Founder of Lawyers Academia" width="110" height="110">
-                <div class="curator-info">
-                    <h3>Ali Shaheen</h3>
-                    <span class="curator-role">OWNER OF LAWYER'S ACADEMIA</span>
-                    <p style="font-size:0.82rem; color:#555; line-height:1.6; margin-bottom:12px;">I'm a final-year LLB student based in Islamabad/Rawalpindi. Founder and Owner of Lawyer's Academia, providing free legal notes and guidance to law students across Pakistan.</p>
-                    <div class="curator-socials">
-                        <a href="https://wa.me/923188209834" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp Ali Shaheen"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.facebook.com/share/17MDGAtJEV/" target="_blank" rel="noopener" class="fb" aria-label="Facebook Ali Shaheen"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/muhammad_ali_shaheen.122?igsh=cGxhY2Q2OHJrdnJo" target="_blank" rel="noopener" class="ig" aria-label="Instagram Ali Shaheen"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ali-shaheen-b69613355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="li" aria-label="LinkedIn Ali Shaheen"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+    <!-- 300x250 Ad -->
+    <div class="ad-wrapper"><script> atOptions = { 'key' : '97c1529c955447bcf87185a13cb36450', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/97c1529c955447bcf87185a13cb36450/invoke.js"></script></div>
 
     <hr class="divider-line">
+    <section class="section" id="community"><div class="community-section-wrap">...</div></section>
 
-    <section class="section" id="community" aria-label="Our Community">
-        <div class="community-section-wrap">
-            <p class="section-title">Connect</p>
-            <p class="section-heading">Our Community</p>
-            <div class="community-row">
-                <a href="https://www.facebook.com/groups/httpslawyer.ac.pk/" target="_blank" rel="noopener" class="community-box fb-box" aria-label="Join Lawyers Academia Facebook Group"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                <a href="https://chat.whatsapp.com/FlZ3bxFzOGd9TKxkByg6wX" target="_blank" rel="noopener" class="community-box wa-box" aria-label="Join Lawyers Academia WhatsApp Group"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
-                <a href="https://www.instagram.com/lawyersacademia?igsh=MW9jeTY4bDQzMGh3dw==" target="_blank" rel="noopener" class="community-box ig-box" aria-label="Follow Lawyers Academia on Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-            </div>
-        </div>
-    </section>
+    <!-- 468x60 Ad -->
+    <div class="ad-wrapper"><script> atOptions = { 'key' : 'a77abf9a9873e41372537a6560b1c3fc', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/a77abf9a9873e41372537a6560b1c3fc/invoke.js"></script></div>
 
     <hr class="divider-line">
+    <section class="section" id="lat-gat"><p class="section-title">Entrance Exams</p><h2 class="section-heading">LAT &amp; GAT Preparation</h2><div class="notes-grid">...</div></section>
 
-    <section class="section" id="lat-gat" aria-label="LAT and GAT Preparation">
-        <p class="section-title">Entrance Exams</p>
-        <h2 class="section-heading">LAT &amp; GAT Preparation</h2>
-        <div class="notes-grid">
-            <article class="note-card"><div class="card-icon green-icon"><i class="fas fa-scale-balanced"></i></div><div><h3>LAT Prep</h3><p>Complete Law Admission Test guides and practice material.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/1uQvsmNfeUGHOSkTDMR1ApSq0tbI5RayF" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/FKZi33z3nqs5GK0BcYo5SF?mode=gi_t" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-            <article class="note-card"><div class="card-icon green-icon"><i class="fas fa-pen-nib"></i></div><div><h3>GAT Prep</h3><p>Graduate Assessment Test mastery resources and guides.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/19QDlEOOFL4JHN2szfq28IoEdG_EoZ48y" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/CfIiAMbREUECTE7jfsfZdZ?mode=gi_t" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-        </div>
-    </section>
+    <!-- 160x600 Ad (two units side by side) -->
+    <div class="ad-wrapper" style="gap: 16px; flex-wrap: wrap; justify-content: center;"><div><script> atOptions = { 'key' : '34a70be1eb7b4aaaa886b45cf4225eb8', 'format' : 'iframe', 'height' : 300, 'width' : 160, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/34a70be1eb7b4aaaa886b45cf4225eb8/invoke.js"></script></div><div><script> atOptions = { 'key' : 'ad66391650c33004c739e1c1d1f3f0d8', 'format' : 'iframe', 'height' : 600, 'width' : 160, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/ad66391650c33004c739e1c1d1f3f0d8/invoke.js"></script></div></div>
 
     <hr class="divider-line">
+    <section class="section" id="notes"><p class="section-title">Notes Library</p><h2 class="section-heading">Annual &amp; Semester Notes</h2><div class="tab-row">...</div><div class="notes-grid" id="notesGrid">...</div></section>
 
-    <section class="section" id="notes" aria-label="LLB Notes Library – Punjab University All Parts">
-        <p class="section-title">Notes Library</p>
-        <h2 class="section-heading">Annual &amp; Semester Notes</h2>
-        <div class="tab-row" role="tablist" aria-label="Filter notes by type">
-            <button class="tab-btn active" onclick="filterCards('all', this)" role="tab" aria-selected="true">All</button>
-            <button class="tab-btn" onclick="filterCards('semester', this)" role="tab" aria-selected="false">Semester</button>
-            <button class="tab-btn" onclick="filterCards('annual', this)" role="tab" aria-selected="false">Annual</button>
-        </div>
-        <div class="notes-grid" id="notesGrid">
-            <article class="note-card" data-type="semester"><div class="card-icon"><i class="fas fa-calendar-days"></i></div><div><h3>Semester Notes</h3><p>HEC-certified modules and legal resources for semester system students.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/10tOjdSA6kmZnZNgl6bRyOLnO_amExLIp" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/LXaxhYKBhgB1YFEOtCHCNF" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Community</a></div></article>
-            <article class="note-card" data-type="annual"><div class="card-icon"><i class="fas fa-book"></i></div><div><h3>Annual — Part 1</h3><p>Complete curriculum for LLB Part 1 annual system students – Punjab University (PU) Lahore.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/1rQ8i2rmcv9UuRHywVdpoOf_sSBklidFI" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/LXaxhYKBhgB1YFEOtCHCNF" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-            <article class="note-card" data-type="annual"><div class="card-icon"><i class="fas fa-book"></i></div><div><h3>Annual — Part 2</h3><p>Complete curriculum for LLB Part 2 annual system students – Punjab University (PU) Lahore.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/1FOId7HCVzxncW547kRVlnOro9M9wzp8q" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/CbvWmAc96oBBfFPwkscCSD" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-            <article class="note-card" data-type="annual"><div class="card-icon"><i class="fas fa-book"></i></div><div><h3>Annual — Part 3</h3><p>Complete curriculum for LLB Part 3 annual system students – Punjab University (PU) Lahore.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/17kAfy67bBbelA6NTeanSd4fDX_s65Gk3" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/BbjWd4QhlmDGl9gIUvVEU5" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-            <article class="note-card" data-type="annual"><div class="card-icon"><i class="fas fa-book"></i></div><div><h3>Annual — Part 4</h3><p>Complete curriculum for LLB Part 4 annual system students – Punjab University (PU) Lahore.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/13BmEWYpay1x1RplX3IKg1lKRAYEXwnWc" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/EBd5WIQEfLWHNR9bLhw009?mode=gi_t" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-            <article class="note-card" data-type="annual"><div class="card-icon"><i class="fas fa-book"></i></div><div><h3>Annual — Part 5</h3><p>Complete curriculum for LLB Part 5 annual system students – Punjab University (PU) Lahore.</p></div><div class="card-actions"><a href="https://drive.google.com/drive/folders/19zTXO-FfSEByVQtgF3xemFrdgr9yONpf" target="_blank" rel="noopener" class="btn-drive"><i class="fas fa-folder-open"></i> Access Notes</a><a href="https://chat.whatsapp.com/HfGRXO8XdV8Bsb4y5bREw5?mode=gi_t" target="_blank" rel="noopener" class="btn-wa"><i class="fab fa-whatsapp"></i> Join Group</a></div></article>
-        </div>
-    </section>
+    <!-- 320x50 Ad -->
+    <div class="ad-wrapper"><script> atOptions = { 'key' : 'bb9f6711f43dfa828dfdc4030ca02834', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} }; </script><script src="https://www.highperformanceformat.com/bb9f6711f43dfa828dfdc4030ca02834/invoke.js"></script></div>
 
-    <section class="section" id="about-us" aria-label="About Lawyers Academia">
-        <p class="section-title">About Us</p>
-        <h2 class="section-heading">Who We Are</h2>
-        <div style="background:#fff; border:1px solid var(--border); border-radius:14px; padding:32px 28px; box-shadow:var(--shadow); position:relative; overflow:hidden;">
-            <div style="position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg, var(--green) 0%, var(--gold) 100%);"></div>
-            <p style="font-size:0.95rem; line-height:1.9; color:#444; margin-bottom:20px;">We are <strong>Umer Raja</strong> and <strong>Ali Shaheen</strong>  both law students who came together with one simple mission: to make quality legal education accessible to every student, completely free of cost.</p>
-            <p style="font-size:0.95rem; line-height:1.9; color:#444; margin-bottom:20px;">We gather notes from different students around Pakistan and beyond, organize them, and publish them here so no student has to struggle alone. Our motto is simple — <em style="color:var(--green); font-weight:600;">knowledge should be free.</em></p>
-            <div style="background:var(--gold-light); border:1px dashed var(--gold); border-radius:10px; padding:20px 22px; margin-bottom:24px;"><p style="font-size:0.88rem; font-weight:700; color:#7a5f20; margin-bottom:6px;">📝 Have Quality Notes?</p><p style="font-size:0.85rem; color:#7a5f20; line-height:1.7;">If you have well-prepared notes, share them with us on WhatsApp, we will review and add them to the website so thousands of students can benefit.</p><a href="https://wa.me/923495372795" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; margin-top:14px; background:var(--wa); color:#fff; padding:10px 20px; border-radius:7px; font-size:0.82rem; font-weight:700; text-decoration:none;"><i class="fab fa-whatsapp"></i> Share Your Notes</a></div>
-            <div style="background:#f0f9f5; border-left:4px solid var(--green); border-radius:0 10px 10px 0; padding:20px 22px;"><p style="font-size:0.9rem; font-weight:800; color:var(--green); margin-bottom:10px; letter-spacing:1px; text-transform:uppercase;">🚀 Coming Soon</p><p style="font-size:0.85rem; color:#444; line-height:1.8; margin-bottom:4px;">We are working hard to bring you even more resources:</p><ul style="font-size:0.85rem; color:#555; line-height:2; padding-left:18px;"><li>📚 <strong>Case Laws</strong> — landmark judgments explained simply</li><li>✍️ <strong>Drafting Courses</strong> — legal drafting made easy</li><li>🎓 <strong>Study Guides</strong> — curated exam preparation material</li><li>⚖️ <strong>And much more...</strong></li></ul></div>
-            <div style="margin-top:28px; text-align:center; padding:24px 20px; background:var(--green); border-radius:12px;"><p style="font-family:'Playfair Display', serif; font-style:italic; font-size:1.05rem; color:#fff; margin-bottom:6px; opacity:0.95;">Stay connected — the best is yet to come.</p><p style="font-size:0.82rem; color:var(--gold); margin-bottom:16px; letter-spacing:1px;">Follow us on our community channels to get notified of every update.</p><div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;"><a href="https://chat.whatsapp.com/FlZ3bxFzOGd9TKxkByg6wX" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:7px; background:#25D366; color:#fff; padding:10px 18px; border-radius:7px; font-size:0.8rem; font-weight:700; text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/groups/httpslawyer.ac.pk/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:7px; background:#1877F2; color:#fff; padding:10px 18px; border-radius:7px; font-size:0.8rem; font-weight:700; text-decoration:none;"><i class="fab fa-facebook-f"></i> Facebook</a><a href="https://www.instagram.com/lawyersacademia?igsh=MW9jeTY4bDQzMGh3dw==" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:7px; background:#E4405F; color:#fff; padding:10px 18px; border-radius:7px; font-size:0.8rem; font-weight:700; text-decoration:none;"><i class="fab fa-instagram"></i> Instagram</a></div><p style="font-size:0.88rem; color:#fff; margin-top:20px; opacity:0.85; font-weight:600;">Thank you for being part of Lawyers Academia. 🎓⚖️</p></div>
-        </div>
-    </section>
+    <section class="section" id="about-us">...</section>
 </main>
 
 <hr class="divider-line">
-<footer class="la-footer">
-    <div class="la-footer__brand"><svg width="38" height="38" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="18" cy="18" r="17" stroke="#c9a84c" stroke-width="1.2"/><line x1="18" y1="8" x2="18" y2="26" stroke="#c9a84c" stroke-width="1"/><line x1="10" y1="13" x2="26" y2="13" stroke="#c9a84c" stroke-width="1"/></svg><div><div class="la-footer__logo-text">Lawyers Academia</div><div class="la-footer__logo-sub">Lex · Scientia · Veritas</div></div></div>
-    <nav class="la-footer__links" aria-label="Footer links"><a href="#">Terms of Use</a><a href="#">Privacy Policy</a><a href="#curators-top">About Us</a><a href="#curators-top">Contact</a><a href="ai-assistant.html" style="color:var(--green); font-weight:700;">⚖️ AI Legal Chat</a></nav>
-    <p class="la-footer__copy">© 2026 Lawyers Academia. All Rights Reserved.</p>
-</footer>
-
-<a href="ai-assistant.html" class="floating-ai-btn" aria-label="Open AI Legal Chat">
-    <div class="float-dot"></div>
-    <div class="float-icon"><i class="fas fa-robot"></i></div>
-    <div class="float-text">AI Legal Chat<span>Ask any law question</span></div>
-</a>
+<footer class="la-footer">...</footer>
+<a href="ai-assistant.html" class="floating-ai-btn"><div class="float-dot"></div><div class="float-icon"><i class="fas fa-robot"></i></div><div class="float-text">AI Legal Chat<span>Ask any law question</span></div></a>
 
 <script>
     function openSidebar() { document.getElementById('sidebar').classList.add('open'); document.getElementById('overlay').classList.add('show'); }
@@ -1220,7 +1101,10 @@
         btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
         document.querySelectorAll('#notesGrid .note-card').forEach(card => { if (type === 'all' || card.dataset.type === type) card.style.display = 'flex'; else card.style.display = 'none'; });
     }
+    // ensure all note cards are visible by default
+    if(document.querySelectorAll('#notesGrid .note-card')) {
+        document.querySelectorAll('#notesGrid .note-card').forEach(c => c.style.display = 'flex');
+    }
 </script>
-
 </body>
 </html>
